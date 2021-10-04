@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Component</title>
+    <style>
+        h1 {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <custom-input name="1234"></custom-input>
+    
+    <h1>Word count rating widget</h1>
+    <article contenteditable="true">
+        <h2>Sample heading</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+        <p is="word-count"></p>
+    </article> -->
+
+    <!-- <script src="js/custom-input.js"></script> -->
+    <!-- <script src="js/word-count.js"></script> -->
+    <template id="popup-info">
+        <h1><slot name="title">제목</slot></h1>
+        <p><slot name="content">내용</slot></p>
+    </template>
+    <h1>Shadow DOM 외부의 h1 요소</h1>
+    <popup-info>
+        <span slot="title">첫 번째 제목</span>
+        <span slot="content">첫 번째 내용</span>
+    </popup-info>
+    <popup-info>
+        <span slot="title">두 번째 제목</span>
+        <span slot="content">두 번째 내용</span>
+    </popup-info>
+    <popup-info></popup-info>
+    <!-- <script src="js/popup-info.js"></script> -->
+    <script src="js/popup-info-template.js"></script>
+</body>
+
+</html>
